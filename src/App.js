@@ -25,7 +25,9 @@ const App = () => {
 export default App;
 
 const Container = styled.div`
+  max-width: 1500px;
   padding: 0 5rem;
+  margin: 0 auto;
 
   @media(max-width: 600px) {
       padding: 0 2.5rem;

@@ -108,7 +108,7 @@ const Link = styled(NavLink).withConfig({
     }
 `;
 
-const Button = styled.button`
+export const Button = styled.button`
     padding: 0.7rem 2.5rem;
     border-radius: 10px;
     border: none;
