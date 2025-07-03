@@ -1,13 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import logoImg from "../assets/logo-no-gradient.png"
 import { theme } from "../styles/theme";
 
 
 function Navbar() {
-    const location = useLocation();
+    const [currentHash, setCurrentHash] = useState(window.location.hash);
+    const navigate = useNavigate();
     const [ menuOpen, setMenuOpen ] = useState(false);
+
+    useEffect(() => {
+  const checkHash = () => {
+    setCurrentHash(window.location.hash);
+  };
+
+  window.addEventListener("hashchange", checkHash);
+  const interval = setInterval(checkHash, 200); // fallback for replaceState
+
+  return () => {
+    window.removeEventListener("hashchange", checkHash);
+    clearInterval(interval);
+  };
+}, []);
+
     return ( 
         <Container>
             <Burger onClick = {() => setMenuOpen(!menuOpen)}>
@@ -17,13 +33,13 @@ function Navbar() {
             </Burger>
             <Logo alt = "Carlos Alvarez Logo" src = {logoImg} />
             <NavLinks $menuOpen = {menuOpen}>
-                <Link isActive = {location.hash === ''} to = "/" onClick = {() => setMenuOpen(false)}>Home</Link>
-                <Link isActive = {location.hash === '#services'} to = "#services" onClick = {() => setMenuOpen(false)}>Services</Link>
-                <Link isActive = {location.hash === '#about'} to = "#about" onClick = {() => setMenuOpen(false)}>About Me</Link>
-                <Link isActive = {location.hash === '#projects'} to = "#projects" onClick = {() => setMenuOpen(false)}>Projects</Link>
-                <Link isActive = {location.hash === '#contact'} to = "#contact" onClick = {() => setMenuOpen(false)}>Contact Me</Link>
+                <Link isActive = {currentHash === ''} to = "/" onClick = {() => setMenuOpen(false)}>Home</Link>
+                <Link isActive = {currentHash === '#services'} to = "#services" onClick = {() => setMenuOpen(false)}>Services</Link>
+                <Link isActive = {currentHash === '#about'} to = "#about" onClick = {() => setMenuOpen(false)}>About Me</Link>
+                <Link isActive = {currentHash === '#projects'} to = "#projects" onClick = {() => setMenuOpen(false)}>Projects</Link>
+                <Link isActive = {currentHash === '#contact'} to = "#contact" onClick = {() => setMenuOpen(false)}>Contact Me</Link>
             </NavLinks>
-            <Button>Hire Me</Button>
+            <Button onClick = {() => navigate("#contact")}>Hire Me</Button>
         </Container>
      );
 }
@@ -39,7 +55,7 @@ const Container = styled.nav`
     padding: 1rem 5rem;
     position: fixed;
     left: 0;
-    z-index: 1;
+    z-index: 10;
     background: ${theme.colors.dark};
 
     @media(max-width: 480px) {

@@ -4,8 +4,11 @@ import { theme } from "../styles/theme";
 import SocialButtons from "./SocialButtons";
 import { Button } from "./Navbar";
 import Profile from "../assets/Subject.png";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+    const navigate = useNavigate();
+
     return ( 
         <Container>
             <Intro>
@@ -14,7 +17,7 @@ function Home() {
                 <Title>Full Stack Web Developer</Title>
                 <SocialButtons />
                 <CallToActions>
-                    <Button>Hire Me</Button>
+                    <Button onClick = {() => navigate("#contact")}>Hire Me</Button>
                     <Button className = "CVButton">Download CV</Button>
                 </CallToActions>
 

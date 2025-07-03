@@ -8,15 +8,19 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import styled from "styled-components";
 import ScrollToAnchor from "./components/ScrollToAnchor";
+import ScrollSpy from "./components/ScrollSpy";
 
 
 const App = () => {
   return (
     <Container>
       <Navbar />
+      <ScrollSpy />
       <ScrollToAnchor />
       <div style = {{height: "160px"}}></div>
       <Home />
+
+      <Services />
 
       <Footer />
     </Container>
