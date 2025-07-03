@@ -35,8 +35,10 @@ const Container = styled.nav`
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: auto;
-    padding: 1rem 0;
+    height: 160px;
+    padding: 1rem 5rem;
+    position: fixed;
+    left: 0;
 
 `;
 

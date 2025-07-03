@@ -15,6 +15,7 @@ const App = () => {
     <Container>
       <Navbar />
       <ScrollToAnchor />
+      <div style = {{height: "160px"}}></div>
       <Home />
 
       <Footer />

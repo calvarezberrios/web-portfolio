@@ -25,7 +25,7 @@ export default function SocialButtons() {
     <Stack direction="row" spacing={2}>
       <SocialIconButton
         component="a"
-        href="https://github.com/yourusername"
+        href="https://github.com/calvarezberrios"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="GitHub"
@@ -35,7 +35,7 @@ export default function SocialButtons() {
 
       <SocialIconButton
         component="a"
-        href="https://linkedin.com/in/yourusername"
+        href="https://linkedin.com/in/calvarezberrios"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="LinkedIn"
