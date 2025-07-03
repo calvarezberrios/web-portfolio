@@ -18,11 +18,12 @@ const App = () => {
       <ScrollSpy />
       <ScrollToAnchor />
       <div style = {{height: "160px"}}></div>
+
       <Home />
-
-      <Services />
-
-      
+      <Services /> 
+      <About />
+      <Projects />
+      <Contact /> 
 
       <Footer />
     </Container>

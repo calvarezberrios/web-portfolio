@@ -52,6 +52,7 @@ const Container = styled.div`
     align-items: center;
     justify-content: space-between;
     height: 83vh;
+    margin-bottom: 5rem;
 
     @media(max-width: 1050px) {
         margin-top: 10rem;

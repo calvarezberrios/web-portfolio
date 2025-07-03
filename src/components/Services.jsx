@@ -69,8 +69,9 @@ const Container = styled.div`
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    min-height: 70vh;
+    min-height: 100vh;
     gap: 1rem;
+    padding-top: 10rem;
 
     h2 {
         font-size: 2.5rem;
