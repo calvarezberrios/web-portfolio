@@ -90,4 +90,8 @@ const ServiceGrid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(301px, 1fr));
   gap: 2rem;
   justify-items: center;
+
+  @media(max-width: 390px) {
+    width: 90%;
+  }
 `;

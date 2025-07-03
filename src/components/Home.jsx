@@ -131,6 +131,10 @@ const Image = styled.img`
         bottom: -30%;
     }
 
+    @media(max-width: 390px) {
+        bottom: -40%;
+    }
+
 `;
 
 const Title = styled.h2`
