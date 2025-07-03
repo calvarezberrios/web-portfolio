@@ -48,7 +48,6 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
     height: 83vh;
 
     @media(max-width: 1050px) {
@@ -56,7 +55,9 @@ const Container = styled.div`
         flex-direction: column;
         justify-content: center;
     }
-
+    @media(max-width: 480px) {
+        
+    }
     
 `;
 
@@ -74,6 +75,15 @@ const Intro = styled.div`
         }
         & > .name {
             font-size: 1.2rem;
+        }
+    }
+
+    @media(max-width: 480px) {
+        p {
+            font-size: .9rem;
+        }
+        & > .name {
+            font-size: 1rem;
         }
     }
 `;
@@ -103,8 +113,8 @@ const Circle = styled.div`
 const Image = styled.img`
     position: absolute;
     height: 60%;
-    bottom: 16%;
-    border-radius: 36%;
+    bottom: 15%;
+    border-radius: 38%;
     z-index: 2;
     filter: grayscale(100%) contrast(130%);
 
@@ -116,6 +126,7 @@ const Image = styled.img`
     @media(max-width: 1050px) {
         bottom: -30%;
     }
+
 `;
 
 const Title = styled.h2`
@@ -130,6 +141,10 @@ const Title = styled.h2`
     @media(max-width: 665px) {
         font-size: 2rem;
     }
+
+    @media(max-width: 1300px) {
+        font-size: 1.5rem;
+    }
 `;
 
 const CallToActions = styled.div`
@@ -143,6 +158,12 @@ const CallToActions = styled.div`
         border: 2px solid ${theme.colors.text};
         &:hover {
 
+        }
+    }
+
+    @media(max-width: 480px) {
+        button {
+            padding: 1rem;
         }
     }
 `;
@@ -170,6 +191,14 @@ const Stats = styled.div`
             color: ${theme.colors.primary};
             font-weight: bold;
             font-size: 1.5rem;
-        }
+
+            @media(max-width: 480px) {
+                font-size: 1.2rem;   
+            }
+        }        
     }
+
+    @media(max-width: 480px) {
+        font-size: .8rem
+     }
 `;
