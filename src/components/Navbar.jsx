@@ -1,20 +1,27 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { NavLink, useLocation } from "react-router-dom";
 import logoImg from "../assets/logo-no-gradient.png"
 import { theme } from "../styles/theme";
 
+
 function Navbar() {
     const location = useLocation();
-
+    const [ menuOpen, setMenuOpen ] = useState(false);
     return ( 
         <Container>
-            <img alt = "Carlos Alvarez Logo" width = "200" height = "125" src = {logoImg} />
-            <NavLinks>
-                <Link isActive={location.pathname === '/'} to = "/">Home</Link>
-                <Link isActive={location.pathname === '/services'} to = "/services">Services</Link>
-                <Link isActive={location.pathname === '/about'} to = "/about">About Me</Link>
-                <Link isActive={location.pathname === '/projects'} to = "/projects">Projects</Link>
-                <Link isActive={location.pathname === '/contact'} to = "/contact">Contact Me</Link>
+            <Burger onClick = {() => setMenuOpen(!menuOpen)}>
+                <span></span>
+                <span></span>
+                <span></span>
+            </Burger>
+            <Logo alt = "Carlos Alvarez Logo" src = {logoImg} />
+            <NavLinks $menuOpen = {menuOpen}>
+                <Link isActive = {location.hash === ''} to = "/" onClick = {() => setMenuOpen(false)}>Home</Link>
+                <Link isActive = {location.hash === '#services'} to = "#services" onClick = {() => setMenuOpen(false)}>Services</Link>
+                <Link isActive = {location.hash === '#about'} to = "#about" onClick = {() => setMenuOpen(false)}>About Me</Link>
+                <Link isActive = {location.hash === '#projects'} to = "#projects" onClick = {() => setMenuOpen(false)}>Projects</Link>
+                <Link isActive = {location.hash === '#contact'} to = "#contact" onClick = {() => setMenuOpen(false)}>Contact Me</Link>
             </NavLinks>
             <Button>Hire Me</Button>
         </Container>
@@ -30,12 +37,59 @@ const Container = styled.nav`
     width: 100%;
     height: auto;
     padding: 1rem 0;
+
+`;
+
+const Logo = styled.img`
+    width: 200px;
+    height: 125px;
+
+    @media(max-width: 600px) {
+        width: 150px;
+        height: 75px;
+    }
+`;
+
+const Burger = styled.div`
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+
+    span {
+        width: 25px;
+        height: 3px;
+        background: ${theme.colors.text};
+        border-radius: 5px;
+    }
+
+    @media(max-width: 1000px) {
+        display: flex;
+    }
 `;
 
 const NavLinks = styled.div`
     display: flex;
     align-items: center;
     gap: 5rem;
+
+    @media(max-width: 1270px) {
+        gap: 2.5rem;
+    }
+
+    @media(max-width: 1000px) {
+        position:absolute;
+        top: 100px;
+        left: 0;
+        flex-direction: column;
+        background: white;
+        gap: .5rem;
+        padding: 1rem;
+        border-radius: 0 0 10px 0;
+        display: ${({ $menuOpen }) => ($menuOpen ? "flex" : "none")};
+
+    }
+    
 `;
 
 const Link = styled(NavLink).withConfig({
@@ -48,6 +102,10 @@ const Link = styled(NavLink).withConfig({
     &:hover {
         color: ${theme.colors.primary}
     }
+
+    @media(max-width: 1270px) {
+        font-size: 1rem;
+    }
 `;
 
 const Button = styled.button`
@@ -57,4 +115,8 @@ const Button = styled.button`
     font-size: .9rem;
     background: ${theme.colors.primary};
     color: ${theme.colors.white};
+
+     @media(max-width: 385px) {
+        padding: 0.7rem 1.5rem;
+    }
 `;

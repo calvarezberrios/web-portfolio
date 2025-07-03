@@ -7,6 +7,10 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     font-family: ${({ theme }) => theme.fonts.body};
     background-color: ${({ theme }) => theme.colors.dark};
@@ -22,4 +26,6 @@ export const GlobalStyles = createGlobalStyle`
   button {
     cursor: pointer;
   }
+
+
 `;
