@@ -11,18 +11,18 @@ function Navbar() {
     const [ menuOpen, setMenuOpen ] = useState(false);
 
     useEffect(() => {
-  const checkHash = () => {
-    setCurrentHash(window.location.hash);
-  };
+        const checkHash = () => {
+            setCurrentHash(window.location.hash);
+        };
 
-  window.addEventListener("hashchange", checkHash);
-  const interval = setInterval(checkHash, 200); // fallback for replaceState
+        window.addEventListener("hashchange", checkHash);
+        const interval = setInterval(checkHash, 200); // fallback for replaceState
 
-  return () => {
-    window.removeEventListener("hashchange", checkHash);
-    clearInterval(interval);
-  };
-}, []);
+        return () => {
+            window.removeEventListener("hashchange", checkHash);
+            clearInterval(interval);
+        };
+    }, []);
 
     return ( 
         <Container>
