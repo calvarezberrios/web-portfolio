@@ -55,7 +55,7 @@ const Container = styled.nav`
     padding: 1rem 5rem;
     position: fixed;
     left: 0;
-    z-index: 10;
+    z-index: 9999;
     background: ${theme.colors.dark};
 
     @media(max-width: 480px) {

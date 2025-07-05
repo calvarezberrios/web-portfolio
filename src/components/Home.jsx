@@ -10,7 +10,7 @@ function Home() {
     const navigate = useNavigate();
 
     return ( 
-        <Container>
+        <Container id = "home">
             <Intro>
                 <p>Hi I am</p>
                 <h2 className = "name">Carlos Alvarez-Berrios aka "Mannie"</h2>
@@ -52,8 +52,9 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  min-height: calc(100vh - 100px);
-
+  min-height: calc(80vh - 150px);
+  margin-bottom: 5rem;
+  
   @media (max-width: 1050px) {
     flex-direction: column;
     justify-content: center;

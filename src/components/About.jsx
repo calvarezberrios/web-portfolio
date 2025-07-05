@@ -60,6 +60,7 @@ const Container = styled.div`
     min-height: calc(100vh - 100px); 
     padding-top: 10rem;
     gap: 3rem;
+    margin-bottom: 5rem;
 
     h2 {
         font-size: 2.5rem;

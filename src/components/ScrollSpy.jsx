@@ -21,14 +21,15 @@ function ScrollSpy() {
 
       if (visibleSection) {
         const newHash = `#${visibleSection}`;
-        if (window.location.hash !== newHash) {
+        if (visibleSection !== "home" && window.location.hash !== newHash) {
           window.history.replaceState(null, "", newHash);
+        } else {
+          window.history.replaceState(null, "", "/");
         }
       } else {
-        
-        // If no sections are intersecting and user is at top
-          window.history.replaceState(null, "", "/");
-        
+          if (window.scrollY < 100 && window.location.hash) {
+            window.history.replaceState(null, "", window.location.pathname);
+          }
       }
     }, observerOptions);
 

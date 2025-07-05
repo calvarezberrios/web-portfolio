@@ -16,6 +16,7 @@ export const GlobalStyles = createGlobalStyle`
     background-color: ${({ theme }) => theme.colors.dark};
     color: ${({ theme }) => theme.colors.text};
     line-height: 1.6;
+    overscroll-behavior: none;
   }
 
   a {
