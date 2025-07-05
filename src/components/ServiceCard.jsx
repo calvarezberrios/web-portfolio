@@ -19,7 +19,7 @@ export default ServiceCard;
 
 const Card = styled.div`
   width: 100%;
-  max-width: 300px;
+  max-width: 420px;
   max-height: 250px;
   background: #1a1b1d;
   color: ${theme.colors.text};
@@ -32,7 +32,9 @@ const Card = styled.div`
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
 
-
+  @media(max-width: 390px) {
+    max-height: 300px;
+  }
 `;
 
 const IconWrapper = styled.div`

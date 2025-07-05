@@ -52,8 +52,6 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   min-height: calc(100vh - 100px);
-  padding-top: 150px;
-  margin-bottom: 5rem;
 
   @media (max-width: 1050px) {
     flex-direction: column;
@@ -66,7 +64,7 @@ const Container = styled.div`
 
 const Intro = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-direction: column;  
 
     @media(max-width: 1050px) {
         margin-bottom: 10rem;
@@ -82,6 +80,8 @@ const Intro = styled.div`
     }
 
     @media(max-width: 480px) {
+        padding: 0 1rem;
+        max-width: 100vw;
         p {
             font-size: .9rem;
         }
@@ -199,14 +199,14 @@ const Stats = styled.div`
     & > div {
         display: flex;
         flex-direction: column;
-        padding: 0 1.5rem;
+        padding: 0 1rem;
         border-left: 1px solid ${theme.colors.text};
 
         &:first-child {
             border-left: none;
         }
 
-        & > span:first-child {
+        span:first-child {
             color: ${theme.colors.primary};
             font-weight: bold;
             font-size: 1.5rem;
@@ -218,6 +218,7 @@ const Stats = styled.div`
     }
 
     @media(max-width: 480px) {
-        font-size: .8rem
+        font-size: .8rem;
+        padding: 1rem 0;
      }
 `;

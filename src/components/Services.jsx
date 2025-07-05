@@ -69,7 +69,7 @@ const Container = styled.div`
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    min-height: 100vh;
+    min-height: calc(100vh - 100px);
     gap: 1rem;
     padding-top: 10rem;
 
@@ -81,17 +81,29 @@ const Container = styled.div`
     p {
         width: 60%;
         margin-bottom: 2rem;
+        text-align: justify;
+
+        @media(max-width: 870px) {
+            width: 100%;
+        }
     }
+
+    
+
 `;
 
 const ServiceGrid = styled.div`
-  display: grid;
-  width: 75%;
-  grid-template-columns: repeat(auto-fit, minmax(301px, 1fr));
-  gap: 2rem;
-  justify-items: center;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    gap: 2rem;
+    justify-items: center;
 
-  @media(max-width: 390px) {
-    width: 90%;
-  }
+    @media(max-width: 520px) {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    @media(max-width: 390px) {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
 `;
