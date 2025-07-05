@@ -95,15 +95,28 @@ const Intro = styled.div`
 
 const ProfileImg = styled.div`
   position: relative;
-  width: 420px;
-  height: 420px;
+  width: 620px;
+  height: 620px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 5rem;
+
+  @media (max-width: 1400px) {
+    width: 520px;
+    height: 520px;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 1220px) {
+    width: 420px;
+    height: 420px;
+    flex-shrink: 0;
+  }
 
   @media (max-width: 1050px) {
-    width: 320px;
-    height: 320px;
+    width: 520px;
+    height: 520px;
     flex-shrink: 0;
   }
 
@@ -116,10 +129,10 @@ const ProfileImg = styled.div`
 
 const Circle = styled.div`
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 95%;
   background: #1a1b1d;
   border-radius: 50%;
   z-index: 1;
@@ -131,7 +144,7 @@ const Circle = styled.div`
 const Image = styled.img`
   position: absolute;
   height: 110%;
-  top: -12%;
+  bottom: 0;
   z-index: 2;
   filter: grayscale(100%) contrast(130%);
   border-radius: 40%;
@@ -139,12 +152,10 @@ const Image = styled.img`
 
   @media (max-width: 1050px) {
     height: 115%;
-    top: -14%;
   }
 
   @media (max-width: 480px) {
     height: 120%;
-    top: -18%;
   }
 `;
 
