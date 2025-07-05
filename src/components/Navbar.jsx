@@ -133,6 +133,8 @@ const Link = styled(NavLink).withConfig({
 `;
 
 export const Button = styled.button`
+    display: flex;
+    align-items: center;
     padding: 0.7rem 2.5rem;
     border-radius: 10px;
     border: none;

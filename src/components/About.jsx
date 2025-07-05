@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { theme } from "../styles/theme";
 import PortfolioImg from "../assets/Subject.png";
+import { Button } from "./Navbar";
+import DownloadIcon from '@mui/icons-material/Download';
 
 function About() {
     return ( 
@@ -16,29 +18,32 @@ function About() {
                 </ProfileImg>
 
                 <AboutInfo>
-                    <p>
-                        As a passionate Full Stack Web Developer, I specialize in building dynamic, 
-                        user-focused applications using modern technologies like React, Node.js, and Express. 
-                        My goal is to create digital experiences that are not only visually engaging but also 
-                        scalable, efficient, and accessible across devices. Whether it's front-end UI design 
-                        or back-end logic and database integration, I bring thoughtful problem solving and a 
-                        commitment to clean, maintainable code to every project.
-                    </p>
-                    <br />
-                    <p>
-                        Over the years, I’ve worked on a range of development tasks—from creating responsive 
-                        layouts and integrating third-party APIs, to implementing user authentication and 
-                        building RESTful back-end services. I enjoy working across the full stack, and I'm 
-                        constantly learning new tools and frameworks to improve performance, scalability, and 
-                        user experience.
-                    </p>
-                    <br />
-                    <p>
-                        Beyond code, I value strong communication, collaboration, and empathy. I believe great 
-                        products come from listening to users, iterating quickly, and staying curious. Whether 
-                        working independently or on a team, I aim to deliver results that align with both user 
-                        needs and business goals.
-                    </p>
+                    <div>
+                        <p>
+                            As a passionate Full Stack Web Developer, I specialize in building dynamic, 
+                            user-focused applications using modern technologies like React, Node.js, and Express. 
+                            My goal is to create digital experiences that are not only visually engaging but also 
+                            scalable, efficient, and accessible across devices. Whether it's front-end UI design 
+                            or back-end logic and database integration, I bring thoughtful problem solving and a 
+                            commitment to clean, maintainable code to every project.
+                        </p>
+                        <br />
+                        <p>
+                            Over the years, I’ve worked on a range of development tasks—from creating responsive 
+                            layouts and integrating third-party APIs, to implementing user authentication and 
+                            building RESTful back-end services. I enjoy working across the full stack, and I'm 
+                            constantly learning new tools and frameworks to improve performance, scalability, and 
+                            user experience.
+                        </p>
+                        <br />
+                        <p>
+                            Beyond code, I value strong communication, collaboration, and empathy. I believe great 
+                            products come from listening to users, iterating quickly, and staying curious. Whether 
+                            working independently or on a team, I aim to deliver results that align with both user 
+                            needs and business goals.
+                        </p>
+                    </div>
+                    <Button className = "CVButton"><DownloadIcon style ={{ marginRight: " 0.5rem" }} />Download CV</Button>
                 </AboutInfo>
             </Content>
         </Container>
@@ -100,11 +105,14 @@ const Content = styled.div`
 const AboutInfo = styled.div`
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
     text-align: justify;
     width: 50%;
 
     @media (max-width: 1050px) {
         width: 100%;
+        align-items: center;
     }
 `;
 
