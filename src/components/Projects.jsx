@@ -17,6 +17,13 @@ const projects = [
     repoUrl: 'https://github.com/calvarezberrios/disney-parent-app'
   },
   {
+    name: 'DevDesk Queue App',
+    image: 'https://image.thum.io/get/width/800/crop/600/noanimate/https://devdeskqueue3.vercel.app/student/login',
+    liveUrl: 'https://devdeskqueue3.vercel.app/student/login',
+    repoUrl: 'https://github.com/DevDeskQueue3/React'
+  },
+
+  {
     name: 'Sleep Tracker App',
     image: 'https://image.thum.io/get/width/800/crop/600/noanimate/https://sleep-tracker-app-d6kq.onrender.com/',
     liveUrl: 'https://sleep-tracker-app-d6kq.onrender.com/',
