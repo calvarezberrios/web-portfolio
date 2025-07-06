@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import logoImg from "../assets/logo-no-gradient.png"
+import logoImg from "../assets/logo-no-gradient.png";
 import { theme } from "../styles/theme";
 
 

@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import styled from "styled-components";
 import ScrollToAnchor from "./components/ScrollToAnchor";
 import ScrollSpy from "./components/ScrollSpy";
+import { Toaster } from 'react-hot-toast';
 
 
 const App = () => {
@@ -26,6 +27,23 @@ const App = () => {
       <Contact /> 
 
       <Footer />
+      <Toaster
+        position="top-right"
+        toastOptions={{
+          success: {
+            style: {
+              background: '#333',
+              color: '#fff',
+            },
+          },
+          error: {
+            style: {
+              background: 'red',
+              color: '#fff',
+            },
+          },
+        }}
+      />
     </Container>
   );
 }
