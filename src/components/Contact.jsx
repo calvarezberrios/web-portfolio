@@ -75,6 +75,7 @@ const Section = styled.div`
     padding: 10rem 0;
     h2 {
         color: ${theme.colors.white};
+        font-size: 2.5rem;
     }
 `;
 

@@ -6,11 +6,12 @@ import { Button } from "./Navbar";
 import Profile from "../assets/Subject.png";
 import { useNavigate } from "react-router-dom";
 import CVButton from "./CVButton";
+import { useState } from "react";
+import ContactModal from "./ContactModal";
 
 function Home() {
     const navigate = useNavigate();
-
-    
+    const [showModal, setShowModal] = useState(false);    
 
     return ( 
         <Container id = "home">
@@ -20,9 +21,11 @@ function Home() {
                 <Title>Full Stack Web Developer</Title>
                 <SocialButtons />
                 <CallToActions>
-                    <Button onClick = {() => navigate("#contact")}>Hire Me</Button>
+                    <Button onClick = {() => setShowModal(true)}>Hire Me</Button>
                     <CVButton className = "CVButton" />
                 </CallToActions>
+
+                <ContactModal isOpen = {showModal} onClose = {() => setShowModal(false)} />
 
                 <Stats>
                     <div>

@@ -3,12 +3,15 @@ import styled from "styled-components";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import logoImg from "../assets/logo-no-gradient.png";
 import { theme } from "../styles/theme";
+import { use } from "react";
+import ContactModal from "./ContactModal";
 
 
 function Navbar() {
     const [currentHash, setCurrentHash] = useState(window.location.hash);
     const navigate = useNavigate();
     const [ menuOpen, setMenuOpen ] = useState(false);
+    const [showModal, setShowModal] = useState(false)
 
     useEffect(() => {
         const checkHash = () => {
@@ -39,7 +42,8 @@ function Navbar() {
                 <Link isActive = {currentHash === '#projects'} to = "#projects" onClick = {() => setMenuOpen(false)}>Projects</Link>
                 <Link isActive = {currentHash === '#contact'} to = "#contact" onClick = {() => setMenuOpen(false)}>Contact Me</Link>
             </NavLinks>
-            <Button onClick = {() => navigate("#contact")}>Hire Me</Button>
+            <Button onClick = {() => setShowModal(true)}>Hire Me</Button>
+            <ContactModal isOpen = {showModal} onClose = {() => setShowModal(false)} />
         </Container>
      );
 }
