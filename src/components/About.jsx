@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import { theme } from "../styles/theme";
 import PortfolioImg from "../assets/Subject.png";
-import { Button } from "./Navbar";
-import DownloadIcon from '@mui/icons-material/Download';
+import CVButton from "./CVButton";
 
 function About() {
     return ( 
@@ -43,7 +42,7 @@ function About() {
                             needs and business goals.
                         </p>
                     </div>
-                    <Button className = "CVButton"><DownloadIcon style ={{ marginRight: " 0.5rem" }} />Download CV</Button>
+                    <CVButton className = "CVButton" />
                 </AboutInfo>
             </Content>
         </Container>

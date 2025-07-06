@@ -5,9 +5,12 @@ import SocialButtons from "./SocialButtons";
 import { Button } from "./Navbar";
 import Profile from "../assets/Subject.png";
 import { useNavigate } from "react-router-dom";
+import CVButton from "./CVButton";
 
 function Home() {
     const navigate = useNavigate();
+
+    
 
     return ( 
         <Container id = "home">
@@ -18,7 +21,7 @@ function Home() {
                 <SocialButtons />
                 <CallToActions>
                     <Button onClick = {() => navigate("#contact")}>Hire Me</Button>
-                    <Button className = "CVButton">Download CV</Button>
+                    <CVButton className = "CVButton" />
                 </CallToActions>
 
                 <Stats>
@@ -67,6 +70,11 @@ const Container = styled.div`
 const Intro = styled.div`
     display: flex;
     flex-direction: column;  
+
+    .CVButton {
+        background: none;
+        border-color: ${theme.colors.text}
+    }
 
     @media(max-width: 1050px) {
         margin-bottom: 10rem;
