@@ -9,7 +9,6 @@ This site is fully responsive, optimized for performance and accessibility, and 
 ## 🚀 Live Demo
 
 👉 [Visit the live site](https://web-portfolio-9eu2.onrender.com/)  
-*(Replace with actual deployment link)*
 
 ---
 
@@ -47,7 +46,6 @@ This site is fully responsive, optimized for performance and accessibility, and 
 src/
 │
 ├── components/ # Reusable UI components (Navbar, Footer, Cards, etc.)
-├── pages/ # Page sections (Home, About, Services, Projects, Contact)
 ├── assets/ # Static assets like logos, images
 ├── styles/ # Theme and global styles
 ├── App.jsx # Main app structure with routing
