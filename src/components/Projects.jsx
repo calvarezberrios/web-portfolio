@@ -43,9 +43,13 @@ function Projects() {
       <h2>Projects</h2>
       <h3>Things I’ve Built and Worked On</h3>
       <Grid>
-        {projects.map((project, index) => (
-          <ProjectCard key={index} {...project} />
-        ))}
+        {projects.map((project, index) => {
+          let isRefurbishing = false;
+          if (project.name === "Disney Parent App" || project.name === "DevDesk Queue App") {
+            isRefurbishing = true;
+          }
+          return (<ProjectCard key={index} isRefurbishing = {isRefurbishing} {...project} />);
+        })}
       </Grid>
     </Container>
   );
