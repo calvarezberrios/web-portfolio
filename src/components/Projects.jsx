@@ -37,6 +37,10 @@ const projects = [
   },
 ];
 
+const inRefurbishment = ["DevDesk Queue App"];
+
+
+
 function Projects() {
   return (
     <Container id="projects">
@@ -45,7 +49,7 @@ function Projects() {
       <Grid>
         {projects.map((project, index) => {
           let isRefurbishing = false;
-          if (project.name === "Disney Parent App" || project.name === "DevDesk Queue App") {
+          if (inRefurbishment.includes(project.name)) {
             isRefurbishing = true;
           }
           return (<ProjectCard key={index} isRefurbishing = {isRefurbishing} {...project} />);
